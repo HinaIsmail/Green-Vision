@@ -1,0 +1,200 @@
+Practice Problem in Python
+1-User will input (3ages).Find the oldest one
+Program:
+# Input: three ages
+age1 = int(input("Enter the first age: "))
+age2 = int(input("Enter the second age: "))
+age3 = int(input("Enter the third age: "))
+oldest_age = max(age1, age2, age3)
+print("The oldest age is:", oldest_age)
+OUTPUT:
+ 
+
+
+2-Write a program that will convert celsius value to fahrenheit
+User will input (2numbers).
+Program:
+# Function to convert Celsius to Fahrenheit
+def celsius_to_fahrenheit(celsius):
+    return (celsius * 9/5) + 32
+celsius_value = float(input("Enter the Celsius value: "))
+multiplier = float(input("Enter the multiplier (default is 1): ") or 1)
+fahrenheit_value = celsius_to_fahrenheit(celsius_value) * multiplier
+print("The Fahrenheit value is:", fahrenheit_value)
+OUTPUT:
+ 
+
+
+3-Write a program to swap the numbers
+Program:
+# Input: two numbers
+num1 = float(input("Enter the first number: "))
+num2 = float(input("Enter the second number: "))
+print("Before swapping:")
+print("First number:", num1)
+print("Second number:", num2)
+num1, num2 = num2, num1
+print("After swapping:")
+print("First number:", num1)
+print("Second number:", num2)
+OUTPUT:
+ 
+
+
+4-Write a program that will give you the sum of 3 digits
+Program:
+# Input: three digits
+digit1 = int(input("Enter the first digit: "))
+digit2 = int(input("Enter the second digit: "))
+digit3 = int(input("Enter the third digit: "))
+sum_of_digits = digit1 + digit2 + digit3
+print("The sum of the digits is:", sum_of_digits)
+OUTPUT:
+ 
+
+5-Write a program that will reverse a four digit number.Also it checks whether the reverse is true.
+Program:
+# Input: a four-digit number
+number = input("Enter a four-digit number: ")
+if len(number) != 4 or not number.isdigit():
+    print("Please enter a valid four-digit number.")
+else:
+    reversed_number = number[::-1]
+    if number == reversed_number:
+        print("The reversed number is:", reversed_number)
+        print("The number is a palindrome.")
+    else:
+        print("The reversed number is:", reversed_number)
+        print("The number is not a palindrome.")
+OUTPUT:
+ 
+
+
+6-Write a program that will tell whether the number entered by the user is odd or even.
+Program:
+# Input: a number
+number = int(input("Enter a number: "))
+if number % 2 == 0:
+    print("The number is even.")
+else:
+    print("The number is odd.")
+OUTPUT:
+ 
+
+7-Write a program that will tell whether the given year is a leap year or not.
+Program:
+# Input: a year
+year = int(input("Enter a year: "))
+if (year % 4 == 0 and year % 100 != 0) or (year % 400 == 0):
+    print(f"{year} is a leap year.")
+else:
+    print(f"{year} is not a leap year.")
+OUTPUT:
+ 
+
+
+8-Write a program to find the euclidean distance between two coordinates.
+Program:
+import math
+# Input: coordinates of two points
+x1 = float(input("Enter the x-coordinate of the first point: "))
+y1 = float(input("Enter the y-coordinate of the first point: "))
+x2 = float(input("Enter the x-coordinate of the second point: "))
+y2 = float(input("Enter the y-coordinate of the second point: "))
+distance = math.sqrt((x2 - x1)**2 + (y2 - y1)**2)
+print("The Euclidean distance between the two points is:", distance)
+OUTPUT:
+ 
+
+9-Write a program that take a user inputr of three angles and will find out whether it can form a triangle or not.
+Program:
+# Input: three angles
+angle1 = float(input("Enter the first angle in degrees: "))
+angle2 = float(input("Enter the second angle in degrees: "))
+angle3 = float(input("Enter the third angle in degrees: "))
+if angle1 + angle2 + angle3 == 180:
+    print("The angles can form a triangle.")
+else:
+    print("The angles cannot form a triangle.")
+OUTPUT:
+ 
+
+
+10-Write a program that will take user input of cost price and selling price and determines whether its a loss or a profit
+Program:
+def calculate_profit_or_loss(cost_price, selling_price):
+    if selling_price > cost_price:
+        return f"Profit: ${selling_price - cost_price:.2f}"
+    elif selling_price < cost_price:
+        return f"Loss: ${cost_price - selling_price:.2f}"
+    else:
+        return "No Profit No Loss"
+def main():
+    try:
+        cost_price = float(input("Enter the cost price: $"))
+        selling_price = float(input("Enter the selling price: $"))
+        
+        result = calculate_profit_or_loss(cost_price, selling_price)
+        print(result)
+    except ValueError:
+        print("Please enter valid numerical values.")
+if __name__ == "__main__":
+    main()
+OUTPUT:
+ 
+
+
+11-Write a program to find the simple interest when the value of principle,rate of interest and time period is given.
+Program:
+def calculate_simple_interest(principal, rate, time):
+    # Simple Interest formula: SI = (P * R * T) / 100
+    interest = (principal * rate * time) / 100
+    return interest
+def main():
+    try:
+        principal = float(input("Enter the principal amount: $"))
+        rate = float(input("Enter the rate of interest (as a percentage): "))
+        time = float(input("Enter the time period (in years): "))
+         interest = calculate_simple_interest(principal, rate, time)
+        print(f"Simple Interest: ${interest:.2f}")
+    except ValueError:
+        print("Please enter valid numerical values.")
+
+if __name__ == "__main__":
+    main()
+OUTPUT:
+ 
+
+
+12-Write a program to find the volume of the cylinder. Also find the cost when ,when the cost of 1litre milk is 40Rs.
+Program:
+import math
+def calculate_volume_and_cost(radius, height, cost_per_liter):
+        volume_cm3 = math.pi * (radius ** 2) * height
+    volume_liters = volume_cm3 / 1000
+    cost = volume_liters * cost_per_liter
+    return volume_liters, cost
+radius = float(input("Enter the radius of the cylinder (in cm): "))
+height = float(input("Enter the height of the cylinder (in cm): "))
+cost_per_liter = 40  # Cost of 1 liter of milk in Rs
+volume, total_cost = calculate_volume_and_cost(radius, height, cost_per_liter)
+print(f"The volume of the cylinder is {volume:.2f} liters.")
+print(f"The cost of the milk is {total_cost:.2f} Rs.")
+OUTPUT:
+ 
+
+
+13-Write  a program that will tell whether the given number is divisible by 3 & 6.
+Program:
+def check_divisibility(number):
+    if number % 6 == 0:
+        return True
+    else:
+        return False
+number = int(input("Enter a number: "))
+if check_divisibility(number):
+    print(f"The number {number} is divisible by both 3 and 6.")
+else:
+    print(f"The number {number} is not divisible by both 3 and 6.")
+OUTPUT:
+ 
